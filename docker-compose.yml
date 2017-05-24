@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  bookstore.web:
+    image: bookstore.web
+    build:
+      context: ./Src/Web/Bookstore.Web
+      dockerfile: Dockerfile
