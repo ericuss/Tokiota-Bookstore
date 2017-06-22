@@ -36,10 +36,18 @@
             return this.query.AnyAsync();
         }
 
-        public Task<List<TEntity>> GetAsync(Guid id, Expression<Func<TEntity, bool>> orderBy = null, string includes = "")
+        public Task<TEntity> GetAsync(Guid id, string includes = "")
         {
             return this.query
-                        .IncludeWhere(x => x.Id.Equals(id))
+                        .IncludeIncludes(includes)
+                        .FirstOrDefaultAsync(x => x.Id.Equals(id));
+        }
+
+        public Task<List<TEntity>> GetAsync(List<Guid> ids, Expression<Func<TEntity, bool>> where = null, Expression<Func<TEntity, bool>> orderBy = null, string includes = "")
+        {
+            return this.query
+                        .IncludeWhere(where)
+                        .Where(x => ids.Contains(x.Id))
                         .IncludeOrder(orderBy)
                         .IncludeIncludes(includes)
                         .ToListAsync();
@@ -57,18 +65,16 @@
         #endregion Queries
 
         #region Commands
-        public TEntity CreateAsync(TEntity entityRaw)
+        public Task CreateAsync(TEntity entityRaw)
         {
             var entity = this.createTransformation(entityRaw);
-            this.set.AddAsync(entity);
-            return entity;
+            return this.set.AddAsync(entity);
         }
 
-        public IEnumerable<TEntity> CreateAsync(List<TEntity> entitiesRaw)
+        public Task CreateAsync(List<TEntity> entitiesRaw)
         {
             var entities = entitiesRaw.Select(this.createTransformation);
-            this.set.AddRangeAsync(entities);
-            return entities;
+            return this.set.AddRangeAsync(entities);
         }
 
         public TEntity Update(TEntity entity)
@@ -82,7 +88,37 @@
             this.set.UpdateRange(entities);
             return entities;
         }
-        #endregion Commands        
+
+        public TEntity Remove(TEntity entity)
+        {
+            return this.set.Remove(entity).Entity;
+        }
+
+        public List<TEntity> Remove(List<TEntity> entities)
+        {
+            this.set.RemoveRange(entities);
+            return entities;
+        }
+
+        public async Task<TEntity> RemoveAsync(Guid id)
+        {
+            var entity = await this.GetAsync(id);
+            return this.set.Remove(entity).Entity;
+        }
+
+        public async Task<List<TEntity>> RemoveAsync(List<Guid> ids)
+        {
+            var entities = await this.GetAsync(ids);
+            this.set.RemoveRange(entities);
+            return entities;
+        }
+        #endregion Commands  
+
+
+        public Task<int> SaveChangesAsync()
+        {
+            return this.context.SaveChangesAsync();
+        }
 
     }
 }

@@ -33,19 +33,25 @@
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            DataAccess.DependencyRegister.Register(services, this.Configuration);
+            services.AddMvc();
+
+            DependencyRegister.Register(services, this.Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IDBInitialize initializer)
         {
             loggerFactory.AddConsole();
-            initializer.Initialize();
+
+
+            initializer.Initialize().Wait();
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMvc();
 
             app.Run(async (context) =>
             {

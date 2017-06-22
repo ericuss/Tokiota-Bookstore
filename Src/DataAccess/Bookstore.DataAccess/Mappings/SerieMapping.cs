@@ -16,7 +16,7 @@
         /// <param name="entity">entity builder</param>
         public override void Map(EntityTypeBuilder<Serie> entity)
         {
-            entity.ToTable("Publisher");
+            entity.ToTable("Serie");
             entity.HasKey(x => x.Id);
 
             entity.HasMany(x => x.Books)

@@ -17,10 +17,10 @@
         /// <param name="services">service collection</param>
         public static void Register(IServiceCollection services, IConfigurationRoot configuration)
         {
-            services.AddSingleton<IBusinessCore<Author>, BusinessCore<Author>>();
-            services.AddSingleton<IBusinessCore<Book>, BusinessCore<Book>>();
-            services.AddSingleton<IBusinessCore<Publisher>, BusinessCore<Publisher>>();
-            services.AddSingleton<IBusinessCore<Serie>, BusinessCore<Serie>>();
+            services.AddScoped<IBusinessCore<Author>, BusinessCore<Author>>();
+            services.AddScoped<IBusinessCore<Book>, BusinessCore<Book>>();
+            services.AddScoped<IBusinessCore<Publisher>, BusinessCore<Publisher>>();
+            services.AddScoped<IBusinessCore<Serie>, BusinessCore<Serie>>();
 
             DataAccess.DependencyRegister.Register(services, configuration);
         }

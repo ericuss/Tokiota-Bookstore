@@ -18,7 +18,7 @@
         public static void Register(IServiceCollection services, IConfigurationRoot configuration)
         {
             services.AddDbContext<BookstoreContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            services.AddSingleton<IDBInitialize, DBInitialize>();
+            services.AddScoped<IDBInitialize, DBInitialize>();
         }
     }
 }

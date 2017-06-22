@@ -11,9 +11,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataAccess\Bookstore.DataAccess\Bookstore.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Business\Bookstore.Business\Bookstore.Business.csproj" />
+    <ProjectReference Include="..\..\DataAccess\Bookstore.Entities\Bookstore.Entities.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Bookstore.Infrastructure\Bookstore.Infrastructure.csproj" />
   </ItemGroup>
 

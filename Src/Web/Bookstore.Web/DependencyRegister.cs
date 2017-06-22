@@ -14,7 +14,7 @@
         /// <param name="services">service collection</param>
         public static void Register(IServiceCollection services, IConfigurationRoot configuration)
         {
-            DataAccess.DependencyRegister.Register(services, configuration);
+            Business.DependencyRegister.Register(services, configuration);
         }
     }
 }
