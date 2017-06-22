@@ -1,16 +1,15 @@
-﻿namespace Bookstore.Entities.Core
+﻿namespace Bookstore.Infrastructure.Entity
 {
-    using Bookstore.Infrastructure.Entity;
     using System;
 
     /// <summary>
     /// Core of entities of EF
     /// </summary>
-    public class EntityCore : IEntityCore
+    public interface IEntityCore
     {
         /// <summary>
         /// Primary key
         /// </summary>
-        public Guid Id { get; set; }
+        Guid Id { get; set; }
     }
 }

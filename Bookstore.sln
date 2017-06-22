@@ -1,25 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{6E67FE82-34E7-4749-9874-E2A2E48B9B4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{172BF0FE-A4BC-4847-AD07-F9E558115048}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.DataAccess", "Src\DataAccess\Bookstore.DataAccess\Bookstore.DataAccess.csproj", "{991436B4-73EE-4875-8CD2-3425FBA283DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookstore.DataAccess", "Src\DataAccess\Bookstore.DataAccess\Bookstore.DataAccess.csproj", "{991436B4-73EE-4875-8CD2-3425FBA283DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.Entities", "Src\DataAccess\Bookstore.Entities\Bookstore.Entities.csproj", "{D6CD0938-F07A-4C7A-AE51-CE4619770F33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookstore.Entities", "Src\DataAccess\Bookstore.Entities\Bookstore.Entities.csproj", "{D6CD0938-F07A-4C7A-AE51-CE4619770F33}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{1325929B-139D-482F-9507-D03072E096E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.Web", "Src\Web\Bookstore.Web\Bookstore.Web.csproj", "{413DB13E-83B9-4B64-9EBB-7CB3A59C537A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookstore.Web", "Src\Web\Bookstore.Web\Bookstore.Web.csproj", "{413DB13E-83B9-4B64-9EBB-7CB3A59C537A}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B2422F77-266D-46C3-B743-41F4DBE2C4E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{0FE4512C-D8FF-4CF6-AC59-1CEB0DB46A8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.Infrastructure", "Src\Infrastructure\Bookstore.Infrastructure\Bookstore.Infrastructure.csproj", "{0D080620-0143-4A9A-8AE8-43269C5B59BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookstore.Infrastructure", "Src\Infrastructure\Bookstore.Infrastructure\Bookstore.Infrastructure.csproj", "{0D080620-0143-4A9A-8AE8-43269C5B59BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{472F89C7-4AE1-410C-A191-1DC486F396B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore.Business", "Src\Business\Bookstore.Business\Bookstore.Business.csproj", "{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +95,18 @@ Global
 		{0D080620-0143-4A9A-8AE8-43269C5B59BC}.Release|x64.Build.0 = Release|Any CPU
 		{0D080620-0143-4A9A-8AE8-43269C5B59BC}.Release|x86.ActiveCfg = Release|Any CPU
 		{0D080620-0143-4A9A-8AE8-43269C5B59BC}.Release|x86.Build.0 = Release|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Debug|x64.Build.0 = Debug|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Debug|x86.Build.0 = Debug|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Release|x64.ActiveCfg = Release|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Release|x64.Build.0 = Release|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Release|x86.ActiveCfg = Release|Any CPU
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,5 +120,7 @@ Global
 		{B2422F77-266D-46C3-B743-41F4DBE2C4E4} = {1325929B-139D-482F-9507-D03072E096E7}
 		{0FE4512C-D8FF-4CF6-AC59-1CEB0DB46A8B} = {6E67FE82-34E7-4749-9874-E2A2E48B9B4C}
 		{0D080620-0143-4A9A-8AE8-43269C5B59BC} = {0FE4512C-D8FF-4CF6-AC59-1CEB0DB46A8B}
+		{472F89C7-4AE1-410C-A191-1DC486F396B4} = {6E67FE82-34E7-4749-9874-E2A2E48B9B4C}
+		{02A3D0B1-EAB8-4F6B-82F9-094E8E6475E4} = {472F89C7-4AE1-410C-A191-1DC486F396B4}
 	EndGlobalSection
 EndGlobal
