@@ -17,7 +17,11 @@
         /// <param name="services">service collection</param>
         public static void Register(IServiceCollection services, IConfigurationRoot configuration)
         {
-            services.AddDbContext<BookstoreContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            var conn = string.IsNullOrWhiteSpace(configuration.GetConnectionString("DefaultConnection"))
+                            ? configuration.GetSection("DefaultConnection").Value
+                            : configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<BookstoreContext>(options => options.UseSqlServer(conn));
             services.AddScoped<IDBInitialize, DBInitialize>();
         }
     }
