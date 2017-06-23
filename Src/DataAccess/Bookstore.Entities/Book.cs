@@ -47,7 +47,7 @@ namespace Bookstore.Entities
         /// <summary>
         /// Publisher id
         /// </summary>
-        public Guid PublisherId { get; set; }
+        public Guid? PublisherId { get; set; }
 
         /// <summary>
         /// Publisher

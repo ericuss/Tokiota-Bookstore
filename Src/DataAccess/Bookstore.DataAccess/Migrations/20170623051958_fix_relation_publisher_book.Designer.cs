@@ -8,9 +8,10 @@ using Bookstore.DataAccess.Context;
 namespace Bookstore.DataAccess.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    partial class BookstoreContextModelSnapshot : ModelSnapshot
+    [Migration("20170623051958_fix_relation_publisher_book")]
+    partial class fix_relation_publisher_book
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

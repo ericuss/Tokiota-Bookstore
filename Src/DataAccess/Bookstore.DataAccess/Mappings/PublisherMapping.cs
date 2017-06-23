@@ -22,7 +22,7 @@
             entity.HasMany(x => x.Books)
                     .WithOne(x => x.Publisher)
                     .HasForeignKey(x => x.PublisherId)
-                    .IsRequired();
+                    .IsRequired(false);
         }
 
         /// <summary>
